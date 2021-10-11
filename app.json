@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "src/assets/favicon.png"
-    }
+    },
+    "description": "Will need to clone the server side of the application: https://github.com/golden-state0fmind/SocialPulse-server",
+    "githubUrl": "https://github.com/golden-state0fmind/SocialPulse-Client"
   }
 }
