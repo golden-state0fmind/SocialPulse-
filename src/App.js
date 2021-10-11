@@ -1,24 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
 import { registerRootComponent } from 'expo';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from '../src/components/Home';
+import LandingScreen from '../src/components/LandingScreen';
+import EditEvent from '../src/components/EditEvent';
 
+const Stack = createStackNavigator();
 function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello and Welcome to Social Pulse!</Text>
+    <NavigationContainer >
       <StatusBar style="auto" />
-    </View>
+      <Stack.Navigator>
+        <Stack.Screen options={{ headerShown: false }} name="LandingScreen" component={LandingScreen} />
+        <Stack.Screen options={{ headerShown: false }} name="Home" component={Home} />
+        <Stack.Screen options={{ headerShown: false }} name="EditEvent" component={EditEvent} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
-export default registerRootComponent(App)
+export default registerRootComponent(App);
