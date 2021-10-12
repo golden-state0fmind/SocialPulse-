@@ -38,8 +38,12 @@ export default function AllEvents({navigation}) {
                             username={value.userName}
                             message={value.message}
                             id={value._id}
-                            onPress={(id) => {
-                                navigation.navigate("EditEvent", {id: id})}}
+                            onPress={() => {
+                                navigation.navigate("EditEvent", {
+                                    message:value.message,
+                                    id:value._id
+                                })
+                            }}
                         />
                     ))}
                 </ScrollView>

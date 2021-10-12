@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, } from 'react-native';
 import { Card } from 'react-native-paper';
 import Modal from '../components/Modal';
 
@@ -13,7 +13,7 @@ export default function EventCard({navigation, route, ...props}) {
             <TouchableOpacity onPress={props.onPress} >
                 <Text style={styles.editTextStyle}> Edit Event ✏️ </Text>
             </TouchableOpacity>
-            <Text style={styles.userName} > {props.id}</Text>
+            <Text style={styles.userName} >{props.id}</Text>
         </Card>
     );
 };
@@ -40,9 +40,7 @@ const styles = StyleSheet.create({
     editTextStyle: {
         color: "#b19cd9",
         fontWeight: "bold",
-        textAlign: "center",
         fontSize: 20,
-        margin: 10,
     },
     deleteText: {
         margin: 5,
