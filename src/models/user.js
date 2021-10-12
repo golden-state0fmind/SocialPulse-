@@ -19,16 +19,15 @@ export default class UserModel {
             .catch(error => console.error(error));
     };
     //Update a specific message will need userId 
-    static update = ({message, id}) => {
+    static update = (message, id) => {
         console.log(`${message} ${id} INSIDE THE USERMODEL}`);
-        id = '61628b5cde805f2c40c186ec';
+        //id = '6164740533e4330673fcec48';
         return fetch(`${API_URL}/user/${id}`, {
             method: "PUT",
             headers: {
-                Accept: 'application/json',
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify()
+            body: JSON.stringify(message)
         })
             .then(res => res.json())
             .catch(error => { console.error, error })

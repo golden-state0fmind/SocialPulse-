@@ -11,13 +11,16 @@ export default function EditEvent({
 }) {
     //SETSTATE
     const [newMessage, setNewMessage] = useState();
-    const { message, id } = route.params;
+    const [message, setMessage] = useState(route.params.message);
+    const { id } = route.params;
+
+    
     //UPDATE
     function updateMessage() {
         UserModel
-            .update({message, id})
-            .then((data) => {
-                console.log(`Successful UPDATE: ${data}`)
+            .update({ message }, id)
+            .then((res) => {
+                console.log(`Successful UPDATE: ${res}`)
             })
             .catch(error => { console.error, error });
     };
@@ -39,12 +42,12 @@ export default function EditEvent({
         >
             <View style={styles.container}>
                 <Text style={styles.headerText} >
-                    Edit Event Details: {id}
+                    Edit Event: {id}
                 </Text>
                 <TextInput
                     style={styles.textMessage}
                     placeholder={`${message}`}
-                    onChangeText={(newMessage) => { setNewMessage(newMessage) }}
+                    onChangeText={(newMessage) => { setMessage(newMessage) }}
                     value={newMessage}
                     numberOfLines={10}
                     multiline={true}
