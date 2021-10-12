@@ -21,7 +21,7 @@ Installing dependencies:
 2. yarn start
 ```
 
-1. Ensure you have `API_KEY` environment variable set in a `.env` file
+1. Ensure you have `API_KEY` and environment variable set in a `.env` file. Change the API endpoint in the UserModel component to match your IP address.
 2. To run iOS app on your iPhone, do the following:
    1. Download [Expo Go](https://apps.apple.com/us/app/expo-go/id982107779) from App Store
    2. Run `expo start`
